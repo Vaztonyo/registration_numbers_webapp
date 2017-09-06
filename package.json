@@ -1,0 +1,31 @@
+{
+  "name": "registration_numbers_webapp",
+  "version": "1.0.0",
+  "description": "Registraion Web-App",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vaztonyo/registration_numbers_webapp.git"
+  },
+  "keywords": [
+    "Registration",
+    "Numbers",
+    "Filter"
+  ],
+  "author": "Vaztonyo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vaztonyo/registration_numbers_webapp/issues"
+  },
+  "homepage": "https://github.com/Vaztonyo/registration_numbers_webapp#readme",
+  "dependencies": {
+    "express": "^4.15.4",
+    "express-handlebars": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
