@@ -7,7 +7,8 @@ const session = require('express-session');
 const RegNumberRoutes = require('./registrationNum');
 
 const Models = require('./models');
-const models = Models('mongodb://localhost/registration');
+const mongoURL = process.env.MONGO_DB_URL || 'mongodb://localhost/registration';
+const models = Models(mongoURL);
 
 const regNumberRoutes = RegNumberRoutes(models);
 
@@ -26,12 +27,19 @@ app.use(bodyParser.json());
 
 app.set('trust proxy', 1) // trust first proxy
 
-app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 * 30 }}));
+app.use(session(
+  { secret: 'keyboard cat',
+   cookie: { maxAge: 60000 * 30 },
+   resave: true,
+   saveUninitialized: true
+}));
 app.use(flash());
 
 
 app.use(express.static('public'));
 app.use(express.static('views'));
+
+var format = require('util').format;
 
 app.get('/', regNumberRoutes.index);
 // app.get('/', regNumberRoutes.add);
@@ -41,11 +49,11 @@ app.post('/', regNumberRoutes.filter);
 
 
 
-var server = app.listen(5000, function() {
+var server = app.listen(process.env.PORT || 5000, function() {
 
     var host = server.address().address;
     var port = server.address().port;
 
-    console.log('Webapp starts at http://%s:%s', host, port);
+    console.log('WebApp starts at http://%s:%s', host, port);
 
 });
