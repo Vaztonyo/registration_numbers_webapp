@@ -1,0 +1,52 @@
+<div class="input" align="center">
+
+    <h1>Registration Numbers:</h1><br>
+
+    {{#if messages.error}}
+        <div class="error">
+            {{messages.error}}
+            <br>
+        </div>
+    {{/if}}
+    {{#if messages.success}}
+        <div class="success">
+            {{messages.success}}
+            <br>
+        </div>
+    {{/if}}<br>
+    <div class="input" align="center">
+
+
+        <form class="" action="/add" method="post" data-toggle="validator">
+            <input type="text" name="regNumber" required="true" placeholder="Enter Registration Number">
+            <input type="submit" class="button" name="addBtn" value="Add">
+        </form>
+
+    </div><br>
+
+    <div class="filter">
+        <form class="" action="/" method="post" data-toggle="validator">
+            <label class="radio-inline">
+      <input type="radio" class="towns" name="townFilter" required="true" value="CA"><b>Cape Town</b>
+    </label>
+            <label class="radio-inline">
+      <input type="radio" class="towns"name="townFilter" required="true" value="CK"><b>Malmesbury</b>
+    </label>
+            <label class="radio-inline">
+      <input type="radio" class="towns" name="townFilter" required="true" value="CY"><b>Belville</b>
+    </label>
+            <label class="radio-inline">
+      <input type="radio" class="towns" name="townFilter" required="true" value="All"><b>All</b>
+    </label><br><br>
+            <input type="submit" class="button" name="show" value="Show">
+        </form>
+    </div>
+
+
+    <ul>
+        {{#each registrationNum}}
+            <ul class="regPlates">{{name}}</ul>
+        {{/each}}
+    </ul>
+
+</div>

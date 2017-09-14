@@ -1,12 +1,19 @@
 html, body {
     margin: auto;
+    color: white;
     padding: auto;
-    background: linear-gradient(to left, royalblue, royalblue, white, white, red, red);
+    background: linear-gradient(to right, royalblue, royalblue, ivory, ivory, red, red);
+    /*background: linear-gradient(to bottom, black,black,red,gold);*/
 }
 
 body {
     height: auto;
+
     display: inline;
+}
+
+h1{
+  text-shadow: 5px 3px 4px aqua;
 }
 
 .button {
@@ -21,7 +28,7 @@ body {
 }
 
 .button:hover {
-    background-color: blue
+    background-color: blue;
 }
 
 .button:active {
@@ -30,23 +37,44 @@ body {
     transform: translateY(4px);
 }
 
+label{
+  font-size: 15px;
+  text-shadow: 4px 2px 3px aqua;
+}
+
+.error{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive;
+  color: #2243B6;
+  text-shadow: 5px 3px 4px #CCFF00;
+}
+
+.success{
+  font-size: 25px;
+  font-weight: bold;
+  font-family: cursive;
+  color: #004B8D;
+  text-shadow: 5px 3px 4px #CCFF00;
+}
+
 .regPlates{
  width: 20%;
- border-radius: 18px;
+ border-radius: 13px;
  border-style: solid;
  border-color: black;
  color: black;
- border-width: 7px;
- height: 30px;
+ border-width: 6px;
+ height: 50px;
  margin: auto;
- text-align: center;
+ align-content: center;
  padding-top: 10px;
- padding-bottom: 10px;
+ padding-bottom: 40px;
  margin-top: 20px;
- font-size: 30px;
+ font-size: 25px;
  background-color: yellow;
  font-weight: bold;
- text-transform: uppercase;
+ /*text-transform: uppercase;*/
 }
 
 
